@@ -1,0 +1,160 @@
+
+
+
+
+
+
+:root {
+    /* Primary */
+    --green-500: hsl(158, 36%, 37%);
+    --green-700: hsl(158, 42%, 18%);
+
+    /* Neutral */
+    --black: hsl(212, 21%, 14%);
+    --grey: hsl(228, 12%, 48%);
+    --cream: hsl(30, 38%, 92%);
+    --white: hsl(0, 0%, 100%);
+
+    /* font */
+    --Montserrat: "Montserrat", sans-serif;
+    --Fraunces: "Fraunces", serif;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.card img {
+    max-width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 100%;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    background-color: var(--cream);
+}
+
+.card {
+    border-radius: 8px;
+    background-color: var(--white);
+    min-width: 250px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image, .content {
+    flex: 1;
+}
+
+.content {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h1 {
+    font-family: var(--Fraunces);
+}
+
+p {
+    font-family: var(--Montserrat);
+}
+
+
+
+.card a {
+    background-color: var(--green-500);
+    padding: 10px 20px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 8px;
+}
+
+.card a:hover {
+    background-color: var(--green-700);
+}
+
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+.subtitle, .description {
+    color: var(--grey);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.discounted_price {
+    color: var(--green-500);
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.original_price {
+    text-decoration: line-through;
+    font-size: 0.9em;
+    color: var(--grey);
+    font-weight: 500;
+}
+
+
+
+
+
+@media (min-width: 768px) {
+    .card {
+        max-width: 600px;
+        flex-direction: row;
+        background-color: var(--white);
+    }
+
+    .image, .content {
+        flex: 1;
+    }
+
+    .card img {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 8px;
+    }
+
+    .content {
+        gap: 20px;
+    }
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
