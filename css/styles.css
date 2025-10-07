@@ -36,14 +36,14 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(0rem, 1.5vh + 1rem, 1rem);
+    padding: 1.25rem;
     background-color: var(--cream);
 }
 
 .card {
     border-radius: 0.5em;
     background-color: var(--white);
-    max-width: clamp(300px, 0.5vh + 5px, 500px);
+    max-width: clamp(300px, 0.5vh + 5px, 400px);
     display: flex;
     flex-direction: column;
 }
@@ -53,10 +53,11 @@ main {
 }
 
 .content {
-    max-width: ;
     padding: clamp(1.25rem, 0.5vh + 0.5rem, 2rem);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     flex-direction: column;
+    align-items: center;
     gap: 1em;
 }
 
@@ -150,6 +151,16 @@ p {
         max-width: 35em;
         flex-direction: row;
         background-color: var(--white);
+    }
+
+    .title {
+        font-size: clamp(2rem, 1.5vw + 1rem, 3rem);
+    }
+
+    .description {
+        color: var(--grey);
+        font-size: clamp(1rem, 0.5vw + 0.4rem, 1rem);
+        font-weight: 500;
     }
 
     .image, .content {
