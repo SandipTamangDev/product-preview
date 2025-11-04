@@ -1,3 +1,5 @@
+/* Variables */
+
 :root {
     /* Primary */
     --green-500: hsl(158, 36%, 37%);
@@ -14,21 +16,89 @@
     --Fraunces: "Fraunces", serif;
 }
 
+
+
+
+
+
+
+
+
+
+/* Reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.card img {
-    max-width: 100%;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    height: 100%;
+
+
+
+/* font */
+
+p {
+    font-family: var(--Montserrat);
 }
 
+.subtitle {
+    color: var(--grey);
+    font-size: clamp(0.1rem, 0.5vw + 0.4rem, 1rem);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+.description {
+    color: var(--grey);
+    font-size: clamp(0.1rem, 0.5vw + 0.4rem, 1rem);
+    font-weight: 500;
+}
+
+.title {
+    font-size: clamp(1.1rem, 1.5vw + 1rem, 2rem);
+    font-family: var(--Fraunces);
+}
+
+.discounted_price {
+    color: var(--green-500);
+    font-size: clamp(1.1rem, 1.5vw + 1rem, 2rem);
+    font-weight: 700;
+    font-family: var(--Fraunces);
+}
+
+.original_price {
+    text-decoration: line-through;
+    font-size: clamp(0.1rem, 0.5vw + 0.5rem, 1.2rem);
+    color: var(--grey);
+    font-weight: 500;
+}
+
+.card-btn {
+    font-size: clamp(0.1rem, 0.5vw + 0.5rem, 1.2rem);
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+/* main */
+
 main {
-    min-height: 100vh;
+    min-height: calc(100vh - 30px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,12 +106,16 @@ main {
     background-color: var(--cream);
 }
 
+
+/* card */
+
 .card {
+    max-width: 300px;
+    min-width: 250px;
     border-radius: 0.5em;
     background-color: var(--white);
-    width: 300px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .image, .content {
@@ -54,19 +128,38 @@ main {
     grid-template-columns: 1fr;
     flex-direction: column;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.7em;
 }
 
-h1 {
-    font-family: var(--Fraunces);
+.card picture img {
+    max-width: 100%;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    height: auto;
 }
 
-p {
-    font-family: var(--Montserrat);
+.card-btn img {
+    max-width: 15px;
+    width: 100%;
 }
+
+.card-btn {
+    white-space: nowrap;
+}
+
+
+
+.btn-text {
+    font-size: clamp(0.5em, 1vh + 0.5em, 2em);
+    
+}
+
+
+
+
 
 .card {
-    min-width: 300px;
+    height: auto;
 }
 
 
@@ -90,53 +183,13 @@ p {
     background-color: var(--green-700);
 }
 
-.cart {
-    font-size: clamp(1rem, 0.5vw + 0.9rem, 1.2rem);
-}
 
 
-.price {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1em;
-    flex-wrap: wrap;
-}
 
-.subtitle {
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-}
 
-.subtitle {
-    color: var(--grey);
-    font-size: clamp(0.7rem, 0.5vw + 0.4rem, 1rem);
-    font-weight: 500;
-}
 
-.description {
-    color: var(--grey);
-    font-size: clamp(0.7rem, 0.5vw + 0.4rem, 1rem);
-    font-weight: 500;
-}
 
-.title {
-    font-size: clamp(1.5rem, 1.5vw + 1rem, 2rem);
-}
 
-.discounted_price {
-    color: var(--green-500);
-    font-size: clamp(1.5rem, 1.5vw + 1rem, 2rem);
-    font-weight: 700;
-    font-family: var(--Fraunces);
-}
-
-.original_price {
-    text-decoration: line-through;
-    font-size: clamp(0.7rem, 0.5vw + 0.5rem, 1.2rem);
-    color: var(--grey);
-    font-weight: 500;
-}
 
 .card-btn a img {
     font-size: clamp(0.7rem, 0.5vw + 0.5rem, 1.2rem);
@@ -148,26 +201,42 @@ p {
 @media (min-width: 768px) {
 
     .card {
-        flex-direction: row;
+        grid-template-columns: 1fr 1fr;
         background-color: var(--white);
-        width: 550px;
-        max-height: 450px;
+        max-width: 560px;
     }
 
     .image, .content {
         flex: 1;
     }
 
-    .card img {
+    .card picture img {
         border-top-right-radius: 0;
         border-bottom-left-radius: 0.5em;
+        /* object-fit: cover; */
     }
 
+    .card picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
     .content {
         gap: 1.9em;
     }
 }
 
 
-.attribution { font-size: clamp(0.1rem, 0.5vw + 0.5rem, 1rem); text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+
+footer { 
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.1rem, 0.5vw + 0.5rem, 1rem); 
+}
+
+
+footer a { 
+    color: hsl(228, 45%, 44%); 
+}
